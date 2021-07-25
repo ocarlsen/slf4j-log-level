@@ -4,7 +4,7 @@
     <groupId>com.ocarlsen.logging</groupId>
     <artifactId>slf4j-log-level</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>slf4j-log-level</name>
     <description>A Log Level implementation for SLF4J.</description>
@@ -29,7 +29,7 @@
         <connection>scm:git:https://github.com/ocarlsen/slf4j-log-level</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
         <url>https://github.com/ocarlsen/slf4j-log-level</url>
-        <tag>v1.0.0</tag>
+        <tag>v1.0.1</tag>
     </scm>
 
     <distributionManagement>
@@ -69,13 +69,15 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
             <version>1.10.19</version>
+            <scope>test</scope>
         </dependency>
 
-        <!-- Binding for ExampleTest -->
+        <!-- Binding for LogLevelTest -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
+            <scope>test</scope>
         </dependency>
 
 

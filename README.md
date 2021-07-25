@@ -1,6 +1,6 @@
 # slf4j-log-level
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.ocarlsen.test/slf4j-log-level.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.ocarlsen.logging%22%20AND%20a:%22slf4j-log-level%22)
+[![Maven Central](https://img.shields.io/maven-central/v/com.ocarlsen.logging/slf4j-log-level.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.ocarlsen.logging%22%20AND%20a:%22slf4j-log-level%22)
 
 [![Build](https://github.com/ocarlsen/slf4j-log-level/actions/workflows/build.yml/badge.svg)](https://github.com/ocarlsen/slf4j-log-level/actions/workflows/build.yml)
 
@@ -19,8 +19,7 @@ Add this Maven dependency to your POM file:
     <dependency>
         <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
-        <version>1.0.0</version>
-        <scope>test</scope>
+        <version>1.0.1</version>
     </dependency>
 
 ### Gradle
