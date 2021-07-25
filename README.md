@@ -1,12 +1,12 @@
 # slf4j-log-level
 
-[comment]: <> ([![Maven Central]&#40;https://img.shields.io/maven-central/v/com.ocarlsen.test/mock-slf4j-impl.svg?label=Maven%20Central&#41;]&#40;https://search.maven.org/search?q=g:%22com.ocarlsen.test%22%20AND%20a:%22mock-slf4j-impl%22&#41;)
+[![Maven Central](https://img.shields.io/maven-central/v/com.ocarlsen.test/slf4j-log-level.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.ocarlsen.logging%22%20AND%20a:%22slf4j-log-level%22)
 
-[comment]: <> ([![Build]&#40;https://github.com/ocarlsen/mock-slf4j-impl/actions/workflows/build.yml/badge.svg&#41;]&#40;https://github.com/ocarlsen/mock-slf4j-impl/actions/workflows/build.yml&#41;)
+[![Build](https://github.com/ocarlsen/slf4j-log-level/actions/workflows/build.yml/badge.svg)](https://github.com/ocarlsen/slf4j-log-level/actions/workflows/build.yml)
 
-[comment]: <> ([![Quality Gate Status]&#40;https://sonarcloud.io/api/project_badges/measure?project=ocarlsen_mock-slf4j-impl&metric=alert_status&#41;]&#40;https://sonarcloud.io/dashboard?id=ocarlsen_mock-slf4j-impl&#41;)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ocarlsen_slf4j-log-level&metric=alert_status)](https://sonarcloud.io/dashboard?id=ocarlsen_slf4j-log-level)
 
-[comment]: <> ([![SonarCloud Coverage]&#40;https://sonarcloud.io/api/project_badges/measure?project=ocarlsen_mock-slf4j-impl&metric=coverage&#41;]&#40;https://sonarcloud.io/component_measures/metric/coverage/list?id=ocarlsen_mock-slf4j-impl&#41;)
+[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=ocarlsen_slf4j-log-level&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=ocarlsen_slf4j-log-level)
 
 This library is useful for simulating Log Levels in SLF4J 1.x. There is no such implementation by default.
 
@@ -17,7 +17,7 @@ This library is useful for simulating Log Levels in SLF4J 1.x. There is no such 
 Add this Maven dependency to your POM file:
 
     <dependency>
-        <groupId>com.ocarlsen.test</groupId>
+        <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <scope>test</scope>
