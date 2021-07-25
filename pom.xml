@@ -69,13 +69,15 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
             <version>1.10.19</version>
+            <scope>test</scope>
         </dependency>
 
-        <!-- Binding for ExampleTest -->
+        <!-- Binding for LogLevelTest -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
+            <scope>test</scope>
         </dependency>
 
 
