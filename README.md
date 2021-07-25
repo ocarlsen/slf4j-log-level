@@ -16,7 +16,7 @@ Add this Maven dependency to your POM file:
     <dependency>
         <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.2-SNAPSHOT</version>
     </dependency>
 
 ### Gradle
