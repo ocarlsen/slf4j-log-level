@@ -1,11 +1,8 @@
 # slf4j-log-level
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.ocarlsen.test/slf4j-log-level.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.ocarlsen.logging%22%20AND%20a:%22slf4j-log-level%22)
-
+[![Maven Central](https://img.shields.io/maven-central/v/com.ocarlsen.logging/slf4j-log-level.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.ocarlsen.logging%22%20AND%20a:%22slf4j-log-level%22)
 [![Build](https://github.com/ocarlsen/slf4j-log-level/actions/workflows/build.yml/badge.svg)](https://github.com/ocarlsen/slf4j-log-level/actions/workflows/build.yml)
-
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ocarlsen_slf4j-log-level&metric=alert_status)](https://sonarcloud.io/dashboard?id=ocarlsen_slf4j-log-level)
-
 [![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=ocarlsen_slf4j-log-level&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=ocarlsen_slf4j-log-level)
 
 This library is useful for simulating Log Levels in SLF4J 1.x. There is no such implementation by default.
