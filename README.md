@@ -19,7 +19,7 @@ Add this Maven dependency to your POM file:
     <dependency>
         <groupId>com.ocarlsen.test</groupId>
         <artifactId>slf4j-log-level</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.0-SNAPSHOT</version>
         <scope>test</scope>
     </dependency>
 
@@ -49,6 +49,6 @@ the static `isLogEnabled` method like this:
     boolean enabled = LogLevel.isLogEnabled(MyLoggingClass.class);
 
 These examples and more are demonstrated
-in [LogLevelTest](https://github.com/ocarlsen/slf4j-log-level/blob/main/src/test/java/com/ocarlsen/logging/LogLevelTest.java)
+in [LogLevelTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTest.java)
 .
 
