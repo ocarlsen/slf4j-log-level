@@ -16,7 +16,7 @@ Add this Maven dependency to your POM file:
     <dependency>
         <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </dependency>
 
 ### Gradle
@@ -34,17 +34,16 @@ Consider the class with an SLF4J Logger:
         private static final Logger LOGGER = LoggerFactory.getLogger(MyLoggingClass.class);
     }
 
+To get the LogLevel of a Logger programmatically, use the static `get` method like this:
+
+    LogLevel logLevel = LogLevel.get(LOGGER);
+
 To log events at a certain LogLevel without using the specific method name (e.g. without using `debug` explicitly), you
 can choose the appropriate instance from the `LogLevel` enum and simply call `log` like this:
 
     LogLevel.DEBUG.log(LOGGER, "this is a debug message");
 
-To determine whether or not a Logger is enabled, that is, whether its level exceeds the ROOT Logger level, you can call
-the static `isLogEnabled` method like this:
-
-    boolean enabled = LogLevel.isLogEnabled(MyLoggingClass.class);
-
 These examples and more are demonstrated
 in [LogLevelTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTest.java)
-.
+and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java).
 
