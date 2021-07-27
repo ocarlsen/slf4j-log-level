@@ -1,13 +1,10 @@
 package com.ocarlsen.logging;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
 import org.junit.Test;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static com.ocarlsen.logging.LogLevel.DEBUG;
 import static com.ocarlsen.logging.LogLevel.ERROR;
@@ -196,6 +193,16 @@ public class LogLevelTest {
     }
 
     @Test
+    public void isEnabled_none() {
+        final Logger logger = mock(Logger.class);
+
+        final boolean enabled = NONE.isEnabled(logger);
+        assertThat(enabled, is(false));
+
+        verifyZeroInteractions(logger);
+    }
+
+    @Test
     public void log_trace() {
         final Logger logger = mock(Logger.class);
         final String message = "abc";
@@ -258,53 +265,5 @@ public class LogLevelTest {
         NONE.log(logger, message);
 
         verifyZeroInteractions(logger);
-    }
-
-    @Test
-    public void isLogEnabled_true() {
-
-        // Root level (via Log4J)
-        LogManager.getRootLogger().setLevel(Level.TRACE);
-
-        // Subject level (via Log4J)
-        LogManager.getLogger(MyLoggingClass.class).setLevel(Level.INFO);
-
-        // SLF4J
-        final boolean enabled = LogLevel.isLogEnabled(MyLoggingClass.class);
-        assertThat(enabled, is(true));
-    }
-
-    @Test
-    public void isLogEnabled_false() {
-
-        // Root level (via Log4J)
-        LogManager.getRootLogger().setLevel(Level.INFO);
-
-        // Subject level (via Log4J)
-        LogManager.getLogger(MyLoggingClass.class).setLevel(Level.TRACE);
-
-        // SLF4J
-        final boolean enabled = LogLevel.isLogEnabled(MyLoggingClass.class);
-        assertThat(enabled, is(false));
-    }
-
-    @Test
-    public void isLogEnabled_noLogLevels() {
-
-        // Root level (via Log4J)
-        LogManager.getRootLogger(); // Default level in Log4J is DEBUG.
-
-        // Subject level (via Log4J)
-        LogManager.getLogger(MyLoggingClass.class).setLevel(null);  // Will use to parent logger level, which is root.
-
-        // SLF4J
-        final boolean enabled = LogLevel.isLogEnabled(MyLoggingClass.class);
-        assertThat(enabled, is(true));
-    }
-
-    private static class MyLoggingClass {
-
-        @SuppressWarnings("unused")
-        private static final Logger LOGGER = LoggerFactory.getLogger(MyLoggingClass.class);
     }
 }
