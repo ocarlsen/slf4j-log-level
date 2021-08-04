@@ -52,7 +52,7 @@ public class LogLevelTestManual {
     }
 
     @Test
-    public void logViaLogLevel() {
+    public void logViaLogLevel_msg() {
 
         // SLF4J
         final Logger myLogger = LoggerFactory.getLogger(MyLoggingClass.class);
@@ -64,6 +64,37 @@ public class LogLevelTestManual {
         LogLevel.INFO.log(myLogger, "this is an info message");
         LogLevel.WARN.log(myLogger, "this is a warn message");
         LogLevel.ERROR.log(myLogger, "this is an error message");
+    }
+
+    @Test
+    public void logViaLogLevel_msgThrowable() {
+
+        // SLF4J
+        final Logger myLogger = LoggerFactory.getLogger(MyLoggingClass.class);
+        final LogLevel logLevel = LogLevel.get(myLogger);
+        logLevel.log(myLogger, "logLevel=" + logLevel);
+
+        final Throwable throwable = new IllegalArgumentException("oops");
+        LogLevel.TRACE.log(myLogger, "this is a trace message", throwable);  // This won't be logged.
+        LogLevel.DEBUG.log(myLogger, "this is a debug message", throwable);
+        LogLevel.INFO.log(myLogger, "this is an info message", throwable);
+        LogLevel.WARN.log(myLogger, "this is a warn message", throwable);
+        LogLevel.ERROR.log(myLogger, "this is an error message", throwable);
+    }
+
+    @Test
+    public void logViaLogLevel_formatArg() {
+
+        // SLF4J
+        final Logger myLogger = LoggerFactory.getLogger(MyLoggingClass.class);
+        final LogLevel logLevel = LogLevel.get(myLogger);
+        logLevel.log(myLogger, "logLevel={}", logLevel);
+
+        LogLevel.TRACE.log(myLogger, "this is a {} message", LogLevel.TRACE);  // This won't be logged.
+        LogLevel.DEBUG.log(myLogger, "this is a {} message", LogLevel.DEBUG);
+        LogLevel.INFO.log(myLogger, "this is an {} message", LogLevel.INFO);
+        LogLevel.WARN.log(myLogger, "this is a {} message", LogLevel.WARN);
+        LogLevel.ERROR.log(myLogger, "this is an {} message", LogLevel.ERROR);
     }
 
     private static class MyLoggingClass {
