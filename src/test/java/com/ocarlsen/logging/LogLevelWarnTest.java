@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import java.io.IOException;
 
 import static com.ocarlsen.logging.LogLevel.WARN;
-import static java.util.Calendar.HOUR;
+import static java.time.DayOfWeek.MONDAY;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
@@ -105,8 +105,8 @@ public class LogLevelWarnTest {
     @Test
     public void log_format_args() {
         final Logger logger = mock(Logger.class);
-        final String format = "abc {} + {}";
-        final Object[] args = {123, true, HOUR};
+        final String format = "int {}, boolean {}, enum {}";
+        final Object[] args = {123, true, MONDAY};
 
         WARN.log(logger, format, args);
 

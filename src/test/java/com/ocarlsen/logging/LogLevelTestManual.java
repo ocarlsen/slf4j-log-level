@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static java.time.DayOfWeek.MONDAY;
 import static org.apache.log4j.ConsoleAppender.SYSTEM_OUT;
 
 /**
@@ -42,7 +43,7 @@ public class LogLevelTestManual {
         // SLF4J
         final Logger myLogger = LoggerFactory.getLogger(MyLoggingClass.class);
         final LogLevel logLevel = LogLevel.get(myLogger);
-        logLevel.log(myLogger, "logLevel=" + logLevel);
+        logLevel.log(myLogger, "logLevel={}", logLevel);
 
         myLogger.trace("this is a trace message");  // This won't be logged.
         myLogger.debug("this is a debug message");
@@ -57,7 +58,7 @@ public class LogLevelTestManual {
         // SLF4J
         final Logger myLogger = LoggerFactory.getLogger(MyLoggingClass.class);
         final LogLevel logLevel = LogLevel.get(myLogger);
-        logLevel.log(myLogger, "logLevel=" + logLevel);
+        logLevel.log(myLogger, "logLevel={}", logLevel);
 
         LogLevel.TRACE.log(myLogger, "this is a trace message");  // This won't be logged.
         LogLevel.DEBUG.log(myLogger, "this is a debug message");
@@ -72,7 +73,7 @@ public class LogLevelTestManual {
         // SLF4J
         final Logger myLogger = LoggerFactory.getLogger(MyLoggingClass.class);
         final LogLevel logLevel = LogLevel.get(myLogger);
-        logLevel.log(myLogger, "logLevel=" + logLevel);
+        logLevel.log(myLogger, "logLevel={}", logLevel);
 
         final Throwable throwable = new IllegalArgumentException("oops");
         LogLevel.TRACE.log(myLogger, "this is a trace message", throwable);  // This won't be logged.
@@ -95,6 +96,21 @@ public class LogLevelTestManual {
         LogLevel.INFO.log(myLogger, "this is an {} message", LogLevel.INFO);
         LogLevel.WARN.log(myLogger, "this is a {} message", LogLevel.WARN);
         LogLevel.ERROR.log(myLogger, "this is an {} message", LogLevel.ERROR);
+    }
+
+    @Test
+    public void logViaLogLevel_formatArgs() {
+
+        // SLF4J
+        final Logger myLogger = LoggerFactory.getLogger(MyLoggingClass.class);
+        final LogLevel logLevel = LogLevel.get(myLogger);
+        logLevel.log(myLogger, "logLevel={}", logLevel);
+
+        LogLevel.TRACE.log(myLogger, "int {}, boolean {}, enum {}", 123, true, MONDAY);  // This won't be logged.
+        LogLevel.DEBUG.log(myLogger, "int {}, boolean {}, enum {}", 123, true, MONDAY);
+        LogLevel.INFO.log(myLogger, "int {}, boolean {}, enum {}", 123, true, MONDAY);
+        LogLevel.WARN.log(myLogger, "int {}, boolean {}, enum {}", 123, true, MONDAY);
+        LogLevel.ERROR.log(myLogger, "int {}, boolean {}, enum {}", 123, true, MONDAY);
     }
 
     private static class MyLoggingClass {
