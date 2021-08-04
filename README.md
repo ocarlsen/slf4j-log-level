@@ -43,7 +43,16 @@ can choose the appropriate instance from the `LogLevel` enum and simply call `lo
 
     LogLevel.DEBUG.log(LOGGER, "this is a debug message");
 
-These examples and more are demonstrated
-in [LogLevelTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTest.java)
-and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java).
+The logging methods taking format arguments are implemented:
+
+    LogLevel.INFO.log(LOGGER, "int {}, boolean {}, enum {}", 123, true, DayOfWeek.MONDAY);
+
+As are the methods taking `Throwable`:
+
+    LogLevel.WARN.log(LOGGER, "somthing went wrong", new IllegalArgumentException("oops"))
+
+These examples and more are demonstrated in the unit tests (
+e.g. [LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java))
+and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java)
+.
 
