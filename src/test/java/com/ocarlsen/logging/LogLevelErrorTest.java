@@ -92,7 +92,7 @@ public class LogLevelErrorTest {
     }
 
     @Test
-    public void log_format_arg_arg() {
+    public void log_format_arg1_arg2() {
         final Logger logger = mock(Logger.class);
         final String format = "abc {} + {}";
         final Object arg1 = 123;
