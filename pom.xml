@@ -154,6 +154,8 @@
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <pushChanges>false</pushChanges>
+                    <preparationGoals>resources:copy-resources@readme scm:add -Dincludes=README.md</preparationGoals>
+                    <completionGoals>resources:copy-resources@readme scm:add -Dincludes=README.md</completionGoals>
                 </configuration>
             </plugin>
 
