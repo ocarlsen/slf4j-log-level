@@ -16,7 +16,7 @@ Add this Maven dependency to your POM file:
     <dependency>
         <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
-        <version>1.2.0</version>
+        <version>${project.version}</version>
     </dependency>
 
 ### Gradle
@@ -52,7 +52,7 @@ As are the methods taking `Throwable`:
     LogLevel.WARN.log(LOGGER, "somthing went wrong", new IllegalArgumentException("oops"))
 
 These examples and more are demonstrated in the unit tests (
-e.g. [LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/main/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java))
-and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/main/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java)
+e.g. [LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java))
+and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java)
 .
 
