@@ -13,7 +13,7 @@
     <licenses>
         <license>
             <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <url>https://raw.githubusercontent.com/ocarlsen/slf4j-log-level/main/LICENSE</url>
         </license>
     </licenses>
 
@@ -42,12 +42,17 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
+
         <slf4j.version>1.7.31</slf4j.version>
 
         <!-- SonarCloud project -->
         <sonar.projectKey>ocarlsen_slf4j-log-level</sonar.projectKey>
         <sonar.organization>ocarlsen</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
+        <!-- For Site Project Summary, "Java Version" field. -->
+        <maven.compiler.source>${maven.compiler.release}</maven.compiler.source>
+        <maven.compiler.target>${maven.compiler.release}</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -118,6 +123,7 @@
                 </executions>
             </plugin>
 
+            <!-- Update README with version. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -146,6 +152,7 @@
                 </executions>
             </plugin>
 
+            <!-- Release -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -158,7 +165,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Bound to 'deploy' goal. -->
+            <!-- Push to OSSRH. Bound to 'deploy' goal. -->
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -169,6 +176,57 @@
                     <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
+            </plugin>
+
+            <!-- Site -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
+                <configuration>
+                    <!--
+                    Let Github Site Plugin handle deployment.
+                    https://github.github.com/maven-plugins/site-plugin/phase.html
+                     -->
+                    <skipDeploy>true</skipDeploy>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+            <plugin>
+                <!--
+                Deploy the site to Github Pages
+                https://github.github.com/maven-plugins/site-plugin/quickstart.html
+                -->
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version><!-- https://github.com/github/maven-plugins/issues/105 -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <!-- select the Maven phase in which the plugin will be executed -->
+                        <phase>site-deploy</phase>
+                        <configuration>
+
+                            <!-- The id of the server to use to retrieve the Github credentials.
+                            This id must identify a server from your setting.xml file. -->
+                            <server>github</server>
+
+                            <!-- The commit message -->
+                            <message>Building site for project version ${project.version}</message>
+
+                            <!-- The location where the site is uploaded -->
+                            <path>${site.path}</path>
+                            <!-- Use merge or override the content -->
+                            <merge>true</merge>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
