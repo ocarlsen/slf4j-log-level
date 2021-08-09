@@ -94,7 +94,6 @@
 
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
@@ -152,7 +151,7 @@
                 </executions>
             </plugin>
 
-            <!-- Release -->
+            <!-- Include README in release -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -165,7 +164,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Push to OSSRH. Bound to 'deploy' goal. -->
+            <!-- Push artifacts to OSSRH. Bound to 'deploy' goal. -->
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
