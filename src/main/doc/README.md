@@ -7,6 +7,8 @@
 
 This library is useful for simulating Log Levels in SLF4J 1.x. There is no such implementation by default.
 
+Visit the [GitHub Pages](https://ocarlsen.github.io/slf4j-log-level/) site for more.
+
 ## Dependency Information
 
 ### Maven

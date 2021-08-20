@@ -7,6 +7,8 @@
 
 This library is useful for simulating Log Levels in SLF4J 1.x. There is no such implementation by default.
 
+Visit the [GitHub Pages](https://ocarlsen.github.io/slf4j-log-level/) site for more.
+
 ## Dependency Information
 
 ### Maven
@@ -38,8 +40,8 @@ To get the LogLevel of a Logger programmatically, use the static `get` method li
 
     LogLevel logLevel = LogLevel.get(LOGGER);
 
-To log events at a certain LogLevel without using the specific method name (e.g. without using `debug` explicitly), you can choose the
-appropriate instance from the `LogLevel` enum and simply call `log` like this:
+To log events at a certain LogLevel without using the specific method name (e.g. without using `debug` explicitly), you
+can choose the appropriate instance from the `LogLevel` enum and simply call `log` like this:
 
     LogLevel.DEBUG.log(LOGGER, "this is a debug message");
 
@@ -51,9 +53,8 @@ As are the methods taking `Throwable`:
 
     LogLevel.WARN.log(LOGGER, "somthing went wrong", new IllegalArgumentException("oops"))
 
-These examples and more are demonstrated in the unit tests (e.g.
-[LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java))
-and
-[LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java).
-
+These examples and more are demonstrated in the unit tests (
+e.g. [LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java))
+and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java)
+.
 
