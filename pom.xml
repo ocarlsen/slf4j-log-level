@@ -4,7 +4,7 @@
     <groupId>com.ocarlsen.logging</groupId>
     <artifactId>slf4j-log-level</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.1</version>
+    <version>1.2.2-SNAPSHOT</version>
 
     <name>SLF4J Log Level</name>
     <description>A Log Level implementation for SLF4J.</description>
@@ -29,7 +29,7 @@
         <connection>scm:git:https://github.com/ocarlsen/slf4j-log-level</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
         <url>https://github.com/ocarlsen/slf4j-log-level</url>
-        <tag>v1.2.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
