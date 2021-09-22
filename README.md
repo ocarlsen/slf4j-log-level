@@ -13,8 +13,6 @@ Visit the [GitHub Pages](https://ocarlsen.github.io/slf4j-log-level/) site for m
 
 ### Maven
 
-Add this Maven dependency to your POM file:
-
     <dependency>
         <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
@@ -23,7 +21,7 @@ Add this Maven dependency to your POM file:
 
 ### Gradle
 
-TODO
+    compile 'com.ocarlsen.logging:slf4j-log-level:1.2.1-SNAPSHOT'
 
 ## Example Code
 
