@@ -7,21 +7,21 @@
 
 This library is useful for simulating Log Levels in SLF4J 1.x. There is no such implementation by default.
 
+Visit the [GitHub Pages](https://ocarlsen.github.io/slf4j-log-level/) site for more.
+
 ## Dependency Information
 
 ### Maven
 
-Add this Maven dependency to your POM file:
-
     <dependency>
-        <groupId>com.ocarlsen.logging</groupId>
-        <artifactId>slf4j-log-level</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>${project.artifactId}</artifactId>
         <version>${project.version}</version>
     </dependency>
 
 ### Gradle
 
-TODO
+    compile '${project.groupId}:${project.artifactId}:${project.version}'
 
 ## Example Code
 
@@ -52,7 +52,7 @@ As are the methods taking `Throwable`:
     LogLevel.WARN.log(LOGGER, "somthing went wrong", new IllegalArgumentException("oops"))
 
 These examples and more are demonstrated in the unit tests (
-e.g. [LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java))
-and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java)
+e.g. [LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/main/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java))
+and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/main/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java)
 .
 

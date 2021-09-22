@@ -7,21 +7,21 @@
 
 This library is useful for simulating Log Levels in SLF4J 1.x. There is no such implementation by default.
 
+Visit the [GitHub Pages](https://ocarlsen.github.io/slf4j-log-level/) site for more.
+
 ## Dependency Information
 
 ### Maven
 
-Add this Maven dependency to your POM file:
-
     <dependency>
         <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
     </dependency>
 
 ### Gradle
 
-TODO
+    compile 'com.ocarlsen.logging:slf4j-log-level:1.2.1'
 
 ## Example Code
 

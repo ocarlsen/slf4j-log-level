@@ -31,10 +31,10 @@ public class LogLevelTestManual {
         rootLogger.setLevel(Level.WARN);
         rootLogger.addAppender(rootAppender);
 
-        // Test logger
-        final org.apache.log4j.Logger testLogger = LogManager.getLogger(MyLoggingClass.class);
-        testLogger.setAdditivity(true);   // Inherit root appender, being explicit for clarity.
-        testLogger.setLevel(Level.DEBUG);
+        // Logger under test.
+        final org.apache.log4j.Logger myLogger = LogManager.getLogger(MyLoggingClass.class);
+        myLogger.setAdditivity(true);   // Inherit root appender, being explicit for clarity.
+        myLogger.setLevel(Level.DEBUG);
     }
 
     @Test
