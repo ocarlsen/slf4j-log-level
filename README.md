@@ -19,12 +19,12 @@ Visit the [GitHub Pages](https://ocarlsen.github.io/slf4j-log-level/) site for m
     <dependency>
         <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
-        <version>1.2.2-SNAPSHOT</version>
+        <version>2.0.0-SNAPSHOT</version>
     </dependency>
 
 ### Gradle
 
-    compile 'com.ocarlsen.logging:slf4j-log-level:1.2.2-SNAPSHOT'
+    compile 'com.ocarlsen.logging:slf4j-log-level:2.0.0-SNAPSHOT'
 
 ## Example Code
 
@@ -55,7 +55,7 @@ As are the methods taking `Throwable`:
     LogLevel.WARN.log(LOGGER, "somthing went wrong", new IllegalArgumentException("oops"))
 
 These examples and more are demonstrated in the unit tests (
-e.g. [LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java))
+e.g. [LogLevelDebugTest](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelDebugTest.java)
 and [LogLevelTestManual](https://github.com/ocarlsen/slf4j-log-level/blob/develop/src/test/java/com/ocarlsen/logging/LogLevelTestManual.java)
-.
+).
 

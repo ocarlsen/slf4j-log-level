@@ -4,7 +4,7 @@
     <groupId>com.ocarlsen.logging</groupId>
     <artifactId>slf4j-log-level</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.2-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
 
     <name>SLF4J Log Level</name>
     <description>A Log Level implementation for SLF4J.</description>
@@ -13,7 +13,7 @@
     <licenses>
         <license>
             <name>MIT License</name>
-            <url>https://raw.githubusercontent.com/ocarlsen/slf4j-log-level/main/LICENSE</url>
+            <url>https://raw.githubusercontent.com/ocarlsen/slf4j-log-level/develop/LICENSE</url>
         </license>
     </licenses>
 
