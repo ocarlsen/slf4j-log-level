@@ -19,12 +19,12 @@ Visit the [GitHub Pages](https://ocarlsen.github.io/slf4j-log-level/) site for m
     <dependency>
         <groupId>com.ocarlsen.logging</groupId>
         <artifactId>slf4j-log-level</artifactId>
-        <version>2.0.0</version>
+        <version>2.0.1-SNAPSHOT</version>
     </dependency>
 
 ### Gradle
 
-    compile 'com.ocarlsen.logging:slf4j-log-level:2.0.0'
+    compile 'com.ocarlsen.logging:slf4j-log-level:2.0.1-SNAPSHOT'
 
 ## Example Code
 
