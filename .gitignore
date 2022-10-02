@@ -1,2 +1,14 @@
 # Release checklist
 Release.md
+
+# IntelliJ IDEA
+.idea/
+
+# Emacs
+*.~
+
+# Maven
+Target/
+
+# Mac
+.DS_Store
